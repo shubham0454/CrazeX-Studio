@@ -6,74 +6,54 @@
     overflow: hidden; /* Hide any overflow from video */
   }
   
-  #background{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the video covers the entire screen */
-    z-index: -1; /* Keep video behind the text */
-  }
-  
+
   .overlay-content {
     position: relative;
     z-index: 1;
     color: white;
     padding: 20px;
   }
-  .video-wrap {
-    z-index: -100;
-  }
+
+/* hero.component.css */
+.hero-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+}
+
+.content h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+.content p {
+  font-size: 1.5rem;
+}
+
   
-  .custom-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
+
   
-.video-background-holder {
-    position: relative;
-    background-color: black;
-    height: calc(100vh - 72px);
-    min-height: 25rem;
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .video-background-holder video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: 0;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-  }
-  
-  .video-background-content {
-    position: relative;
-    z-index: 2;
-  }
-  
-  .video-background-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    opacity: 0.5;
-    z-index: 1;
-  }
+
   /* h3 {
     margin-top: 100px;
     font-size: 2rem;
