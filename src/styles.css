@@ -62,7 +62,85 @@
   --------------------------------------------------------------*/
 /* Hero Section Styles */
 
+/* General styling */
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+}
 
+.video-background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Ensures the video covers the container */
+}
+
+/* Overlay content styling */
+.overlay-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  top: 200px;
+}
+
+.overlay-content h1 {
+  color: white;
+  font-size: 5rem;
+  margin: 0;
+}
+
+.overlay-content h4 {
+  color: white;
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+/* Container alignment */
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .overlay-content h1 {
+    font-size: 2rem;
+  }
+
+  .overlay-content h4 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .overlay-content h4 {
+    font-size: 1rem;
+  }
+}
 
 
 
