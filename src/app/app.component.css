@@ -2,6 +2,7 @@
     position: relative;
     overflow: hidden;
     height: 100vh; /* Full viewport height */
+    background: url('video/Sequence 01.mp4') no-repeat center;
   }
   
   .video-background-container {
