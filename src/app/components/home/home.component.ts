@@ -21,23 +21,25 @@ export class HomeComponent implements AfterViewInit {
         const videoElement = video as HTMLVideoElement; // Cast to HTMLVideoElement
         if (videoElement.closest('.carousel-item')?.classList.contains('active')) {
           videoElement.play();
+
           setTimeout(() => {
             videoElement.pause();
-          }, 40000);
+          }, 40000); // 40 seconds (in milliseconds)
         } else {
           videoElement.pause();
         }
       });
     });
 
-
+    // Initial video state (start playing on first load)
     videos.forEach((video: Element) => {
       const videoElement = video as HTMLVideoElement; // Cast to HTMLVideoElement
       if (videoElement.closest('.carousel-item')?.classList.contains('active')) {
         videoElement.play();
+        // Stop the video after 40 seconds
         setTimeout(() => {
           videoElement.pause();
-        }, 40000);
+        }, 40000); // 40 seconds (in milliseconds)
       } else {
         videoElement.pause();
       }
