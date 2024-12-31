@@ -6,16 +6,17 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit , OnInit{
   ngAfterViewInit() {
     this.setActiveVideo();
   }
 
+  ngOnInit(): void {
+  }
   setActiveVideo() {
     const videos = document.querySelectorAll('.carousel-item video');
     const carousel = document.querySelector('#heroCarousel') as HTMLElement;
     
-
     carousel.addEventListener('slid.bs.carousel', () => {
       videos.forEach((video: Element) => {
         const videoElement = video as HTMLVideoElement; // Cast to HTMLVideoElement
