@@ -6,44 +6,46 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements AfterViewInit , OnInit{
+export class HomeComponent implements AfterViewInit {
   ngAfterViewInit() {
-    this.setActiveVideo();
+    this.initializeCarousel();
   }
 
-  ngOnInit(): void {
-  }
-  setActiveVideo() {
-    const videos = document.querySelectorAll('.carousel-item video');
+  initializeCarousel() {
     const carousel = document.querySelector('#heroCarousel') as HTMLElement;
-    
-    carousel.addEventListener('slid.bs.carousel', () => {
-      videos.forEach((video: Element) => {
-        const videoElement = video as HTMLVideoElement; // Cast to HTMLVideoElement
-        if (videoElement.closest('.carousel-item')?.classList.contains('active')) {
-          videoElement.play();
+    const videos = document.querySelectorAll('.carousel-item video');
 
-          setTimeout(() => {
-            videoElement.pause();
-          }, 40000); // 40 seconds (in milliseconds)
+    // Function to move to the next slide
+    const moveToNextSlide = () => {
+      const nextButton = document.querySelector('.carousel-control-next') as HTMLElement;
+      nextButton.click();
+    };
+
+    // Add an event listener to each video for the 'ended' event
+    videos.forEach((videoElement) => {
+      const video = videoElement as HTMLVideoElement;
+
+      video.addEventListener('ended', () => {
+        moveToNextSlide();
+      });
+    });
+
+    // Handle slide transition to play the active slide's video
+    carousel.addEventListener('slid.bs.carousel', () => {
+      videos.forEach((videoElement) => {
+        const video = videoElement as HTMLVideoElement;
+        if (video.closest('.carousel-item')?.classList.contains('active')) {
+          video.play();
         } else {
-          videoElement.pause();
+          video.pause();
         }
       });
     });
 
-    // Initial video state (start playing on first load)
-    videos.forEach((video: Element) => {
-      const videoElement = video as HTMLVideoElement; // Cast to HTMLVideoElement
-      if (videoElement.closest('.carousel-item')?.classList.contains('active')) {
-        videoElement.play();
-        // Stop the video after 40 seconds
-        setTimeout(() => {
-          videoElement.pause();
-        }, 40000); // 40 seconds (in milliseconds)
-      } else {
-        videoElement.pause();
-      }
-    });
+    // Play the video of the initially active slide
+    const activeVideo = document.querySelector('.carousel-item.active video') as HTMLVideoElement;
+    if (activeVideo) {
+      activeVideo.play();
+    }
   }
 }

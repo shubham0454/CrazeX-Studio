@@ -3,58 +3,37 @@
   <!-- carousel.component.html -->
   <div class="container-fluid text-center position-relative">
     <!-- Carousel -->
-    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="15000">
-      <!-- Carousel Indicators -->
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-          aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-
-      <!-- Carousel Inner -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="false">
       <div class="carousel-inner">
         <!-- Slide 1 -->
         <div class="carousel-item active">
           <div class="video-background-container">
-            <video class="video-background" autoplay loop playsinline muted>
+            <video class="video-background" playsinline muted>
               <source src="https://crezex-studio-project.web.app/assets/video/Sequence%2001.webm" type="video/webm" />
               Your browser does not support HTML5 video.
             </video>
           </div>
-          <!-- <div class="overlay-content">
-          <h1>Crazex Studio</h1>
-          <h4>Coming Soon...</h4>
-        </div> -->
         </div>
-
         <!-- Slide 2 -->
         <div class="carousel-item">
           <div class="video-background-container">
-            <video class="video-background" autoplay loop playsinline muted>
+            <video class="video-background" playsinline muted>
               <source src="https://crezex-studio-project.web.app/assets/video/Sequence%2001.webm" type="video/webm" />
               Your browser does not support HTML5 video.
             </video>
           </div>
-          <!-- <div class="overlay-content">
-          <h1>Crazex Studio</h1>
-          <h4>Coming Soon...</h4>
-        </div> -->
         </div>
-
         <!-- Slide 3 -->
         <div class="carousel-item">
           <div class="video-background-container">
-            <video class="video-background" autoplay loop playsinline muted>
+            <video class="video-background" playsinline muted>
               <source src="https://crezex-studio-project.web.app/assets/video/Sequence%2001.webm" type="video/webm" />
               Your browser does not support HTML5 video.
             </video>
           </div>
-
         </div>
       </div>
-
-      <!-- Carousel Controls -->
+      <!-- Controls -->
       <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -65,6 +44,7 @@
       </button>
     </div>
   </div>
+  
   <div class="overlay-content">
     <h1>Crazex Studio</h1>
     <h4>Coming Soon...</h4>
